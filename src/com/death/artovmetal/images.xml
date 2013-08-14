@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<images>
+    <image>
+        <filename>left_hand_path.png</filename>
+        <artist>Entombed</artist>
+        <album>Left Hand Path</album>
+        <level>1</level>
+    </image>
+    <image>
+        <filename>onward_to_golgotha.png</filename>
+        <artist>Incantation</artist>
+        <album>Onward to Golgotha</album>
+        <level>1</level>
+    </image>
+</images>

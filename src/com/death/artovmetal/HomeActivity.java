@@ -6,12 +6,16 @@ import android.view.Menu;
 
 public class HomeActivity extends Activity
 {
+	ImageDatabaseAdapter imageDatabaseAdapter;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
+
+		imageDatabaseAdapter = new ImageDatabaseAdapter(this);
+		imageDatabaseAdapter = imageDatabaseAdapter.open();
 	}
 
 	@Override
