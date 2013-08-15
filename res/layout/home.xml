@@ -9,14 +9,19 @@
 		android:layout_height="wrap_content"
 		android:text="@string/app_name"
 		android:textSize="40sp"
+		android:textColor="#000000"
 		android:gravity="center"
 		android:layout_marginTop="20dip"/>
+	
+	<View
+		android:layout_width="1dp"
+		android:layout_height="50dp" />
     
 	<Button android:id="@+id/btnPlay"
 	    android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
 		android:text="@string/play"
-		android:textSize="20sp"
+		android:textSize="30sp"
 		android:textColor="#cc0000"
 		android:textStyle="bold"
 		android:layout_marginTop="25dip"
