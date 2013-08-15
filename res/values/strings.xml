@@ -3,6 +3,7 @@
 
     <string name="app_name">ArtOvMetal</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="play">Play!</string>
+    <string name="back_to_menu">Back To Menu</string>
 
 </resources>

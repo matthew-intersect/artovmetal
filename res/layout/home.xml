@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#3b3b3b">
+     
+	<TextView android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/app_name"
+		android:textSize="40sp"
+		android:gravity="center"
+		android:layout_marginTop="20dip"/>
+    
+	<Button android:id="@+id/btnPlay"
+	    android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/play"
+		android:textSize="20sp"
+		android:textColor="#cc0000"
+		android:textStyle="bold"
+		android:layout_marginTop="25dip"
+		android:background="@null"/>
+ 
+</LinearLayout>
