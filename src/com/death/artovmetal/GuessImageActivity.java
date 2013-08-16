@@ -83,6 +83,7 @@ public class GuessImageActivity extends Activity
 			public void onClick(View v)
 			{
 				Intent albumBoard = new Intent(GuessImageActivity.this, ImageBoardActivity.class);
+				albumBoard.putExtra("level", image.getLevel());
 				startActivity(albumBoard);
 			}
 		});

@@ -240,4 +240,124 @@
         <album>Transcend The Rubicon</album>
         <level>2</level>
     </image>
+    <image>
+        <filename>deathhammer</filename>
+        <artist>Asphyx</artist>
+        <album>Deathhammer</album>
+        <level>3</level>
+    </image>
+    <image>
+        <filename>dying_remains</filename>
+        <artist>Morta Skuld</artist>
+        <album>Dying Remains</album>
+        <level>3</level>
+    </image>
+    <image>
+        <filename>hallucinating_in_resurrecture</filename>
+        <artist>Binah</artist>
+        <album>Hallucinting In Resurrecture</album>
+        <level>3</level>
+    </image>
+    <image>
+        <filename>dances_from_left</filename>
+        <artist>Mordicus</artist>
+        <album>Dances From Left</album>
+        <level>3</level>
+    </image>
+    <image>
+        <filename>in_their_darkened_shrines</filename>
+        <artist>Nile</artist>
+        <album>In Their Darkened Shrines</album>
+        <level>3</level>
+    </image>
+    <image>
+        <filename>oracles</filename>
+        <artist>Fleshgod Apocalypse</artist>
+        <album>Oracles</album>
+        <level>3</level>
+    </image>
+    <image>
+        <filename>the_western_front</filename>
+        <artist>Sacriphyx</artist>
+        <album>The Western Front</album>
+        <level>3</level>
+    </image>
+    <image>
+        <filename>towards_the_megalith</filename>
+        <artist>Disma</artist>
+        <album>Towards The Megalith</album>
+        <level>3</level>
+    </image>
+    <image>
+        <filename>mental_funeral</filename>
+        <artist>Autopsy</artist>
+        <album>Mental Funeral</album>
+        <level>3</level>
+    </image>
+    <image>
+        <filename>infected_ideologies</filename>
+        <artist>Gangrena</artist>
+        <album>Infected Ideologies</album>
+        <level>3</level>
+    </image>
+    <image>
+        <filename>member_of_immortal_damnation</filename>
+        <artist>Purtenance</artist>
+        <album>Member Of Immortal Damnation</album>
+        <level>3</level>
+    </image>
+    <image>
+        <filename>passages_into_deformity</filename>
+        <artist>Defeated Sanity</artist>
+        <album>Passages Into Deformity</album>
+        <level>3</level>
+    </image>
+    <image>
+        <filename>the_ending_quest</filename>
+        <artist>Gorement</artist>
+        <album>The Ending Quest</album>
+        <level>3</level>
+    </image>
+    <image>
+        <filename>unending_degradation</filename>
+        <artist>Krypts</artist>
+        <album>Unending Degradation</album>
+        <level>3</level>
+    </image>
+    <image>
+        <filename>sleepers_in_the_rift</filename>
+        <artist>Morbus Chron</artist>
+        <album>Sleepers In The Rift</album>
+        <level>3</level>
+    </image>
+    <image>
+        <filename>onwards_to_golgotha</filename>
+        <artist>Incantation</artist>
+        <album>Onwards To Golgotha</album>
+        <level>3</level>
+    </image>
+    <image>
+        <filename>infernal_caustic_torments</filename>
+        <artist>Wombbath</artist>
+        <album>Infernal Caustic Torments</album>
+        <level>3</level>
+    </image>
+    <image>
+        <filename>to_the_depths_in_degradation</filename>
+        <artist>Infester</artist>
+        <album>To The Depths In Degradation</album>
+        <level>3</level>
+    </image>
+    <image>
+        <filename>welcome_to_the_morbid_reich</filename>
+        <artist>Vader</artist>
+        <album>Welcome To The Morbid Reich</album>
+        <level>3</level>
+    </image>
+    <image>
+        <filename>iniquitous</filename>
+        <artist>Rottrevore</artist>
+        <album>Iniquitous</album>
+        <level>3</level>
+    </image>
 </images>
