@@ -38,15 +38,23 @@ public class ImageBoardActivity extends Activity
 		{
 	        public void onItemClick(AdapterView<?> parent, View v, int position, long id)
 	        {
-	        	Intent album = new Intent(ImageBoardActivity.this, GuessImageActivity.class);
-	            album.putExtra("albumID", images.get(position).getId());
-	            startActivity(album);
+	        	if(images.get(position).getImageStatus() == ImageStatus.INCORRECT ||
+	        			images.get(position).getImageStatus() == ImageStatus.UNANSWERED)
+	        	{
+		        	Intent album = new Intent(ImageBoardActivity.this, GuessImageActivity.class);
+		            album.putExtra("albumID", images.get(position).getId());
+		            startActivity(album);
+	        	}
+	        	else
+	        	{
+	        		//TODO: display correct dialog
+	        	}
 	        }
 	    });
 		
 		back.setOnClickListener(new View.OnClickListener()
 		{
-			public void onClick(View arg0)
+			public void onClick(View v)
 			{
 				Intent home = new Intent(ImageBoardActivity.this, HomeActivity.class);
 				startActivity(home);

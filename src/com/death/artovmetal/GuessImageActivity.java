@@ -1,7 +1,9 @@
 package com.death.artovmetal;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -37,6 +39,15 @@ public class GuessImageActivity extends Activity
 	    album.setImageResource(getResources().getIdentifier(image.getFilename(),
         		"drawable", getPackageName()));
 	    
+	    
+	    back.setOnClickListener(new View.OnClickListener()
+		{
+			public void onClick(View v)
+			{
+				Intent albumBoard = new Intent(GuessImageActivity.this, ImageBoardActivity.class);
+				startActivity(albumBoard);
+			}
+		});
 	}
 	
 }

@@ -19,6 +19,7 @@
     <EditText android:id="@+id/albumAnswer"
         android:layout_width="match_parent" 
 	    android:layout_height="wrap_content"
+	    android:textSize="25sp"
 	    android:textColor="#FFFFFF"
 	    android:hint="@string/album_title"
 	    android:layout_gravity="center" />
@@ -26,6 +27,7 @@
 	<TextView android:id="@+id/answerError"
 	    android:layout_width="match_parent" 
 	    android:layout_height="wrap_content"
+	    android:textColor="#f00"
 	    android:textIsSelectable="true"
 	    android:layout_gravity="center" />
 	
@@ -46,7 +48,9 @@
 	<TextView android:id="@+id/returnToList"
 	    android:layout_width="wrap_content" 
 	    android:layout_height="wrap_content"
+	    android:focusable="false"
 	    android:textIsSelectable="true"
+	    android:textSize="20sp"
 	    android:textColor="#FFFFFF"
 	    android:text="@string/return_to_album_board"
 	    android:layout_gravity="center" />

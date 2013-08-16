@@ -25,7 +25,7 @@ public class HomeActivity extends Activity
 		
 		play.setOnClickListener(new View.OnClickListener()
 		{
-			public void onClick(View arg0)
+			public void onClick(View v)
 			{
 				Intent imageBoard = new Intent(getApplicationContext(), ImageBoardActivity.class);
 				startActivity(imageBoard);
