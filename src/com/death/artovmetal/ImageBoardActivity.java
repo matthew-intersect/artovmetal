@@ -6,8 +6,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.Toast;
 
 public class ImageBoardActivity extends Activity
 {
@@ -29,7 +32,16 @@ public class ImageBoardActivity extends Activity
 		
 		images = new ArrayList<Image>();
 		images = imageDatabaseAdapter.getImages();
-		imageGrid.setAdapter(new ImageAdapter(this, images));
+		ImageAdapter imageAdapter = new ImageAdapter(this, images);
+		imageGrid.setAdapter(imageAdapter);
+		
+		imageGrid.setOnItemClickListener(new OnItemClickListener()
+		{
+	        public void onItemClick(AdapterView<?> parent, View v, int position, long id)
+	        {
+	            Toast.makeText(ImageBoardActivity.this, images.get(position).getAlbum(), Toast.LENGTH_SHORT).show();
+	        }
+	    });
 		
 		back.setOnClickListener(new View.OnClickListener()
 		{

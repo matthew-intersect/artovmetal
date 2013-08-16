@@ -118,13 +118,14 @@ public class ImageDatabaseAdapter
 		Cursor imgCursor = db.query("image", null, null, null, null, null, null);
 		while(imgCursor.moveToNext())
 		{
+			int id = imgCursor.getInt(imgCursor.getColumnIndex("id"));
 			String filename = imgCursor.getString(imgCursor.getColumnIndex("filename"));
 			String artist = imgCursor.getString(imgCursor.getColumnIndex("artist"));
 			String album = imgCursor.getString(imgCursor.getColumnIndex("album"));
 			int status = imgCursor.getInt(imgCursor.getColumnIndex("status"));
 			int level = imgCursor.getInt(imgCursor.getColumnIndex("level"));
 			
-			Image image = new Image(filename, artist, album, status, level);
+			Image image = new Image(id, filename, artist, album, status, level);
 			images.add(image);
 		}
 		return images;

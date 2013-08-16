@@ -2,6 +2,7 @@ package com.death.artovmetal;
 
 public class Image
 {
+	private int id;
 	private String filename;
 	private String artist;
 	private String album;
@@ -12,8 +13,9 @@ public class Image
 	{
 	}
 	
-	public Image(String filename, String artist, String album, int status, int level)
+	public Image(int id, String filename, String artist, String album, int status, int level)
 	{
+		this.id = id;
 		this.filename = filename;
 		this.artist = artist;
 		this.album = album;
@@ -30,6 +32,16 @@ public class Image
 				this.imageStatus = ImageStatus.INCORRECT;
 				break;
 		}
+	}
+
+	public int getId()
+	{
+		return id;
+	}
+
+	public void setId(int id)
+	{
+		this.id = id;
 	}
 
 	public String getFilename()
