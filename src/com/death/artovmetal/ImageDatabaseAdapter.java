@@ -145,5 +145,14 @@ public class ImageDatabaseAdapter
 		imgCursor.close();
 		return new Image(albumId, filename, artist, album, status, level);
 	}
+
+	public void setAlbumStatus(Image image, ImageStatus correct)
+	{
+		ContentValues updatedValues = new ContentValues();
+		updatedValues.put("status", correct.getStatusNumber());
+		String where="id = ?";
+		
+		db.update("image", updatedValues, where, new String[]{String.valueOf(image.getId())});
+	}
 		
 }

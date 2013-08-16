@@ -14,7 +14,7 @@ public class ImageAdapter extends BaseAdapter
 {
 	private Context context;
 	private LayoutInflater inflater;
-	 
+	
     public ArrayList<Image> images;
  
     public ImageAdapter(Context c, ArrayList<Image> imgs)

@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class GuessImageActivity extends Activity
 {
@@ -39,6 +40,23 @@ public class GuessImageActivity extends Activity
 	    album.setImageResource(getResources().getIdentifier(image.getFilename(),
         		"drawable", getPackageName()));
 	    
+	    check.setOnClickListener(new View.OnClickListener()
+		{
+			public void onClick(View v)
+			{
+				String answer = albumAnswer.getText().toString().trim();
+				if(answer.equalsIgnoreCase(image.getAlbum()))
+				{
+					imageDatabaseAdapter.setAlbumStatus(image, ImageStatus.CORRECT);
+					//TODO: display correct dialog
+				}
+				else
+				{
+					imageDatabaseAdapter.setAlbumStatus(image, ImageStatus.INCORRECT);
+					Toast.makeText(GuessImageActivity.this, "Incorrect", Toast.LENGTH_LONG).show();
+				}
+			}
+		});
 	    
 	    back.setOnClickListener(new View.OnClickListener()
 		{
