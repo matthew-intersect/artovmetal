@@ -120,4 +120,124 @@
         <album>The Omnipresent Curse</album>
         <level>1</level>
     </image>
+    <image>
+        <filename>morphosis</filename>
+        <artist>Hate</artist>
+        <album>Morphosis</album>
+        <level>2</level>
+    </image>
+    <image>
+        <filename>nespithe</filename>
+        <artist>Demilich</artist>
+        <album>nespithe</album>
+        <level>2</level>
+    </image>
+    <image>
+        <filename>parasignosis</filename>
+        <artist>Mitochondrion</artist>
+        <album>Parasignosis</album>
+        <level>2</level>
+    </image>
+    <image>
+        <filename>path_of_the_weakening</filename>
+        <artist>Deeds Of Flesh</artist>
+        <album>Path Of The Weakening</album>
+        <level>2</level>
+    </image>
+    <image>
+        <filename>season_of_the_dead</filename>
+        <artist>Necrophagia</artist>
+        <album>Season Of The Dead</album>
+        <level>2</level>
+    </image>
+    <image>
+        <filename>soulside_journey</filename>
+        <artist>Darkthrone</artist>
+        <album>Soulside Journey</album>
+        <level>2</level>
+    </image>
+    <image>
+        <filename>the_dead_shall_inherit</filename>
+        <artist>Baphomet</artist>
+        <album>The Dead Shall Inherit</album>
+        <level>2</level>
+    </image>
+    <image>
+        <filename>the_destroyers_of_all</filename>
+        <artist>Ulcerate</artist>
+        <album>The Destroyers Of All</album>
+        <level>2</level>
+    </image>
+    <image>
+        <filename>the_nocturnal_silence</filename>
+        <artist>Necrophobic</artist>
+        <album>The Nocturnal Silence</album>
+        <level>2</level>
+    </image>
+    <image>
+        <filename>outre</filename>
+        <artist>Portal</artist>
+        <album>Outre</album>
+        <level>2</level>
+    </image>
+    <image>
+        <filename>unquestionable_presence</filename>
+        <artist>Atheist</artist>
+        <album>Unquestionable Presence</album>
+        <level>2</level>
+    </image>
+    <image>
+        <filename>the_sleep_of_morbid_dreams</filename>
+        <artist>Funebrarum</artist>
+        <album>The Sleep Of Morbid Dreams</album>
+        <level>2</level>
+    </image>
+    <image>
+        <filename>none_so_vile</filename>
+        <artist>Cryptopsy</artist>
+        <album>None So Vile</album>
+        <level>2</level>
+    </image>
+    <image>
+        <filename>gore_metal</filename>
+        <artist>Exhumed</artist>
+        <album>Gore Metal</album>
+        <level>2</level>
+    </image>
+    <image>
+        <filename>deceased</filename>
+        <artist>Accidental Suicide</artist>
+        <album>Deceased</album>
+        <level>2</level>
+    </image>
+    <image>
+        <filename>goremageddon</filename>
+        <artist>Aborted</artist>
+        <album>Goremageddon</album>
+        <level>2</level>
+    </image>
+    <image>
+        <filename>on_pestilent_winds</filename>
+        <artist>Excoriate</artist>
+        <album>On Pestilent Winds</album>
+        <level>2</level>
+    </image>
+    <image>
+        <filename>to_the_gory_end</filename>
+        <artist>Cancer</artist>
+        <album>To The Gory End</album>
+        <level>2</level>
+    </image>
+    <image>
+        <filename>here_in_after</filename>
+        <artist>Immolation</artist>
+        <album>Here In After</album>
+        <level>2</level>
+    </image>
+    <image>
+        <filename>transcend_the_rubicon</filename>
+        <artist>Benediction</artist>
+        <album>Transcend The Rubicon</album>
+        <level>2</level>
+    </image>
 </images>
