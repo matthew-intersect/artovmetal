@@ -1,6 +1,7 @@
 package com.death.artovmetal;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -48,7 +49,26 @@ public class GuessImageActivity extends Activity
 				if(answer.equalsIgnoreCase(image.getAlbum()))
 				{
 					imageDatabaseAdapter.setAlbumStatus(image, ImageStatus.CORRECT);
-					//TODO: display correct dialog
+					final Dialog dialog = new Dialog(GuessImageActivity.this);
+    				dialog.setContentView(R.layout.correct_album);
+    				
+    				dialog.setTitle("Correct");
+    				TextView albumSummary = (TextView) dialog.findViewById(R.id.albumSummary);
+    				albumSummary.setText(image.getArtist() + " - " + image.getAlbum());
+    				Button ok = (Button) dialog.findViewById(R.id.correctOk);
+    				
+    				ok.setOnClickListener(new View.OnClickListener() 
+        			{
+						@Override
+						public void onClick(View v)
+						{
+							Intent imageBoard = new Intent(GuessImageActivity.this, ImageBoardActivity.class);
+							startActivity(imageBoard);
+							dialog.dismiss();
+							finish();
+						}
+        			});
+        			dialog.show();
 				}
 				else
 				{

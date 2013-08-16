@@ -11,5 +11,7 @@
     <string name="return_to_album_board">Return to album board</string>
     <string name="album_art">Album art</string>
     <string name="album_status">Album status</string>
+    <string name="correct">Correct!</string>
+    <string name="ok">OK</string>
 
 </resources>

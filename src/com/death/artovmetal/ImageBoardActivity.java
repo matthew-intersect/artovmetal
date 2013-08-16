@@ -3,6 +3,7 @@ package com.death.artovmetal;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.TextView;
 
 public class ImageBoardActivity extends Activity
 {
@@ -47,7 +49,25 @@ public class ImageBoardActivity extends Activity
 	        	}
 	        	else
 	        	{
-	        		//TODO: display correct dialog
+	        		final Dialog dialog = new Dialog(ImageBoardActivity.this);
+    				dialog.setContentView(R.layout.correct_album);
+    				
+    				dialog.setTitle("Answer");
+    				TextView correct = (TextView) dialog.findViewById(R.id.correct);
+    				correct.setVisibility(View.GONE);
+    				TextView albumSummary = (TextView) dialog.findViewById(R.id.albumSummary);
+    				albumSummary.setText(images.get(position).getArtist() + " - " + images.get(position).getAlbum());
+    				Button ok = (Button) dialog.findViewById(R.id.correctOk);
+    				
+    				ok.setOnClickListener(new View.OnClickListener() 
+        			{
+						@Override
+						public void onClick(View v)
+						{
+							dialog.dismiss();
+						}
+        			});
+        			dialog.show();
 	        	}
 	        }
 	    });

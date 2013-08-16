@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <TextView android:id="@+id/correct" 
+        android:textIsSelectable="false"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content" 
+	    android:layout_height="wrap_content"
+	    android:textColor="#0F0"
+	    android:textSize="40sp"
+	    android:text="@string/correct" />
+    
+    <TextView android:id="@+id/albumSummary"
+        android:textIsSelectable="true"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content" 
+	    android:layout_height="wrap_content"
+	    android:textSize="24sp" />
+    
+    <Button
+        android:id="@+id/correctOk"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dip"
+        android:text="@string/ok" />
+    
+</LinearLayout>
