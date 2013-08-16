@@ -3,6 +3,7 @@ package com.death.artovmetal;
 import java.util.ArrayList;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -12,6 +13,7 @@ import android.widget.ImageView;
 public class ImageAdapter extends BaseAdapter
 {
 	private Context context;
+	private LayoutInflater inflater;
 	 
     public ArrayList<Image> images;
  
@@ -19,6 +21,7 @@ public class ImageAdapter extends BaseAdapter
     {
         context = c;
         images = imgs;
+        inflater = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
  
     @Override
@@ -42,11 +45,23 @@ public class ImageAdapter extends BaseAdapter
     @Override
     public View getView(int position, View convertView, ViewGroup parent)
     {
-        ImageView imageView = new ImageView(context);
-        imageView.setImageResource(context.getResources().getIdentifier(images.get(position).getFilename(),
+    	convertView = inflater.inflate(R.layout.image_board_item, null);
+    	convertView.setLayoutParams(new GridView.LayoutParams(200, 200));
+    	ImageView art = (ImageView) convertView.findViewById(R.id.albumArt);
+    	art.setScaleType(ImageView.ScaleType.CENTER_CROP);
+    	ImageView status = (ImageView) convertView.findViewById(R.id.albumStatus);
+    	art.setImageResource(context.getResources().getIdentifier(images.get(position).getFilename(),
         		"drawable", context.getPackageName()));
-        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        imageView.setLayoutParams(new GridView.LayoutParams(200, 200));
-        return imageView;
+    	
+    	if(images.get(position).getImageStatus()==ImageStatus.CORRECT)
+    	{
+    		status.setImageResource(R.drawable.correct);
+    	}
+    	else if(images.get(position).getImageStatus()==ImageStatus.INCORRECT)
+    	{
+    		status.setImageResource(R.drawable.incorrect);
+    	}
+    	
+    	return convertView;
     }
 }

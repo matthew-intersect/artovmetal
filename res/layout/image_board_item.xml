@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="280dp"
+	android:layout_height="280dp" >
+
+	<ImageView android:id="@+id/albumArt"
+		android:contentDescription="@string/album_art"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent" />
+
+	<ImageView android:id="@+id/albumStatus"
+		android:contentDescription="@string/album_status"
+		android:layout_width="30dp"
+		android:layout_height="30dp"
+		android:layout_alignTop="@id/albumArt"
+		android:layout_alignRight="@id/albumArt"
+		android:scaleType="fitXY" />
+      
+</RelativeLayout>
