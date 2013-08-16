@@ -22,14 +22,8 @@
 	    android:textSize="25sp"
 	    android:textColor="#FFFFFF"
 	    android:hint="@string/album_title"
-	    android:layout_gravity="center" />
-    
-	<TextView android:id="@+id/answerError"
-	    android:layout_width="match_parent" 
-	    android:layout_height="wrap_content"
-	    android:textColor="#f00"
-	    android:textIsSelectable="true"
-	    android:layout_gravity="center" />
+	    android:layout_gravity="center"
+	    android:singleLine="true" />
 	
 	<View
 		android:layout_width="1dp"

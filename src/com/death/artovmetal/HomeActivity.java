@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class HomeActivity extends Activity
 {
@@ -22,6 +23,8 @@ public class HomeActivity extends Activity
 		imageDatabaseAdapter = imageDatabaseAdapter.open();
 		
 		play = (Button) findViewById(R.id.btnPlay);
+		ImageView logo = (ImageView) findViewById(R.id.logo);
+		logo.setImageResource(R.drawable.artovmetal);
 		
 		play.setOnClickListener(new View.OnClickListener()
 		{

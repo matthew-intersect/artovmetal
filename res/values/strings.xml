@@ -13,5 +13,6 @@
     <string name="album_status">Album status</string>
     <string name="correct">Correct!</string>
     <string name="ok">OK</string>
+    <string name="logo">logo</string>
 
 </resources>

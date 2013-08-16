@@ -18,7 +18,7 @@ public class GuessImageActivity extends Activity
 	ImageView album;
 	Button check;
 	EditText albumAnswer;
-	TextView answerError, back;
+	TextView back;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -29,7 +29,6 @@ public class GuessImageActivity extends Activity
 		album = (ImageView) findViewById(R.id.albumView);
 		check = (Button) findViewById(R.id.btnCheck);
 		albumAnswer = (EditText) findViewById(R.id.albumAnswer);
-		answerError = (TextView) findViewById(R.id.answerError);
 		back = (TextView) findViewById(R.id.returnToList);
 		
 		imageDatabaseAdapter = new ImageDatabaseAdapter(this);
