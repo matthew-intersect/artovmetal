@@ -1,6 +1,7 @@
 package com.death.artovmetal;
 
 import java.io.InputStream;
+import java.util.ArrayList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -12,13 +13,14 @@ import org.w3c.dom.NodeList;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
 public class ImageDatabaseAdapter 
 {
 	static final String DATABASE_NAME = "artovmetal.db";
-	static final int DATABASE_VERSION = 3;
+	static final int DATABASE_VERSION = 5;
 	
 	static final String IMAGE_TABLE_CREATE = "create table image"+
 	                             "( id integer primary key autoincrement, filename text, artist text," +
@@ -94,14 +96,12 @@ public class ImageDatabaseAdapter
 	public void addImage(String filename, String artist, String album, int level)
 	{
 	   ContentValues newValues = new ContentValues();
-		// Assign values for each row.
 		newValues.put("filename", filename);
 		newValues.put("artist", artist);
 		newValues.put("album", album);
 		newValues.put("status", 0); // default status for image
 		newValues.put("level",level);
 	
-		// Insert the row into your table
 		db.insert("image", null, newValues);
 	}
 	
@@ -110,6 +110,24 @@ public class ImageDatabaseAdapter
 	    String where="id=?";
 	    int numberOFEntriesDeleted = db.delete("image", where, new String[]{String.valueOf(id)});
 	    return numberOFEntriesDeleted;
+	}
+
+	public ArrayList<Image> getImages()
+	{
+		ArrayList<Image> images = new ArrayList<Image>();
+		Cursor imgCursor = db.query("image", null, null, null, null, null, null);
+		while(imgCursor.moveToNext())
+		{
+			String filename = imgCursor.getString(imgCursor.getColumnIndex("filename"));
+			String artist = imgCursor.getString(imgCursor.getColumnIndex("artist"));
+			String album = imgCursor.getString(imgCursor.getColumnIndex("album"));
+			int status = imgCursor.getInt(imgCursor.getColumnIndex("status"));
+			int level = imgCursor.getInt(imgCursor.getColumnIndex("level"));
+			
+			Image image = new Image(filename, artist, album, status, level);
+			images.add(image);
+		}
+		return images;
 	}
 		
 }

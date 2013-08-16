@@ -1,15 +1,45 @@
 <?xml version="1.0"?>
 <images>
     <image>
-        <filename>left_hand_path.png</filename>
+        <filename>left_hand_path</filename>
         <artist>Entombed</artist>
         <album>Left Hand Path</album>
         <level>1</level>
     </image>
     <image>
-        <filename>onward_to_golgotha.png</filename>
-        <artist>Incantation</artist>
-        <album>Onward to Golgotha</album>
+        <filename>like_an_everflowing_stream</filename>
+        <artist>Dismember</artist>
+        <album>Like An Everflowing Stream</album>
+        <level>1</level>
+    </image>
+    <image>
+        <filename>altars_of_madness</filename>
+        <artist>Morbid Angel</artist>
+        <album>Altars Of Madness</album>
+        <level>1</level>
+    </image>
+    <image>
+        <filename>close_to_a_world_below</filename>
+        <artist>Immolation</artist>
+        <album>Close To A World Below</album>
+        <level>1</level>
+    </image>
+    <image>
+        <filename>leprosy</filename>
+        <artist>Death</artist>
+        <album>Leprosy</album>
+        <level>1</level>
+    </image>
+    <image>
+        <filename>graves_of_the_archangels</filename>
+        <artist>Dead Congregation</artist>
+        <album>Graves Of The Archangels</album>
+        <level>1</level>
+    </image>
+    <image>
+        <filename>reek_of_putrefaction</filename>
+        <artist>Carcass</artist>
+        <album>Reek Of Putrefaction</album>
         <level>1</level>
     </image>
 </images>
