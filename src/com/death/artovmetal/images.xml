@@ -42,4 +42,82 @@
         <album>Reek Of Putrefaction</album>
         <level>1</level>
     </image>
+    <image>
+        <filename>a_forgotten_dream</filename>
+        <artist>Internal Decay</artist>
+        <album>A Forgotten Dream</album>
+        <level>1</level>
+    </image>
+    <image>
+        <filename>all_idols_fall_before_the_hammer</filename>
+        <artist>Adversarial</artist>
+        <album>All Idols Fall Before The Hammer</album>
+        <level>1</level>
+    </image>
+    <image>
+        <filename>antithesis</filename>
+        <artist>Origin</artist>
+        <album>Antithesis</album>
+        <level>1</level>
+    </image>
+    <image>
+        <filename>atonement_ritual</filename>
+        <artist>Embrace Of Thorns</artist>
+        <album>Atonement Ritual</album>
+        <level>1</level>
+    </image>
+    <image>
+        <filename>cause_of_death</filename>
+        <artist>Obituary</artist>
+        <album>Cause Of Death</album>
+        <level>1</level>
+    </image>
+    <image>
+        <filename>chainsaw_dismemberment</filename>
+        <artist>Mortician</artist>
+        <album>Chainsaw Dismemberment</album>
+        <level>1</level>
+    </image>
+    <image>
+        <filename>consuming_impulse</filename>
+        <artist>Pestilence</artist>
+        <album>Consuming Impulse</album>
+        <level>1</level>
+    </image>
+    <image>
+        <filename>contragenesis</filename>
+        <artist>Ignivomous</artist>
+        <album>Contragenesis</album>
+        <level>1</level>
+    </image>
+    <image>
+        <filename>for_victory</filename>
+        <artist>Bolt Thrower</artist>
+        <album>For Victory</album>
+        <level>1</level>
+    </image>
+    <image>
+        <filename>dreaming_with_the_dead</filename>
+        <artist>Ripping Corpse</artist>
+        <album>Dreaming With The Dead</album>
+        <level>1</level>
+    </image>
+    <image>
+        <filename>crypt_born_and_tethered_to_ruin</filename>
+        <artist>Vasaeleth</artist>
+        <album>Crypt Born and Tethered To Ruin</album>
+        <level>1</level>
+    </image>
+    <image>
+        <filename>horror_of_the_zombies</filename>
+        <artist>Impetigo</artist>
+        <album>Horror Of The Zombies</album>
+        <level>1</level>
+    </image>
+    <image>
+        <filename>the_omnipresent_curse</filename>
+        <artist>Vengeful</artist>
+        <album>The Omnipresent Curse</album>
+        <level>1</level>
+    </image>
 </images>

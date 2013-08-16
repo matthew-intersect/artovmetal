@@ -20,7 +20,7 @@ import android.database.sqlite.SQLiteDatabase;
 public class ImageDatabaseAdapter 
 {
 	static final String DATABASE_NAME = "artovmetal.db";
-	static final int DATABASE_VERSION = 5;
+	static final int DATABASE_VERSION = 6;
 	
 	static final String IMAGE_TABLE_CREATE = "create table image"+
 	                             "( id integer primary key autoincrement, filename text, artist text," +
@@ -112,10 +112,10 @@ public class ImageDatabaseAdapter
 	    return numberOFEntriesDeleted;
 	}
 
-	public ArrayList<Image> getImages()
+	public ArrayList<Image> getImagesByLevel(int lvl)
 	{
 		ArrayList<Image> images = new ArrayList<Image>();
-		Cursor imgCursor = db.query("image", null, null, null, null, null, null);
+		Cursor imgCursor = db.query("image", null, "level=?", new String[]{String.valueOf(lvl)}, null, null, null);
 		while(imgCursor.moveToNext())
 		{
 			int id = imgCursor.getInt(imgCursor.getColumnIndex("id"));

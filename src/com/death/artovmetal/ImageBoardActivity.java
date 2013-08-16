@@ -32,7 +32,7 @@ public class ImageBoardActivity extends Activity
 		GridView imageGrid = (GridView) findViewById(R.id.image_grid);
 		
 		images = new ArrayList<Image>();
-		images = imageDatabaseAdapter.getImages();
+		images = imageDatabaseAdapter.getImagesByLevel(1);
 		ImageAdapter imageAdapter = new ImageAdapter(this, images);
 		imageGrid.setAdapter(imageAdapter);
 		
