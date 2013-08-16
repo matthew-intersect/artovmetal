@@ -154,5 +154,34 @@ public class ImageDatabaseAdapter
 		
 		db.update("image", updatedValues, where, new String[]{String.valueOf(image.getId())});
 	}
+	
+	public ArrayList<Level> getLevels()
+	{
+		ArrayList<Level> levels = new ArrayList<Level>();
+		Cursor lvlCursor = db.query(true, "image", new String[]{"level"}, null, null, null, null, null, null);
+		while(lvlCursor.moveToNext())
+		{
+			int number = lvlCursor.getInt(lvlCursor.getColumnIndex("level"));
+			ArrayList<Image> levelImages = getImagesByLevel(number);
+			int albumCount = levelImages.size();
+			int correct = numberCorrect(levelImages);
+			
+			Level level = new Level(number, albumCount, correct);
+			levels.add(level);
+		}
+		lvlCursor.close();
+		return levels;
+	}
+	
+	private int numberCorrect(ArrayList<Image> images)
+	{
+		int count = 0;
+		for(Image img : images)
+		{
+			if(img.getImageStatus() == ImageStatus.CORRECT)
+				count++;
+		}
+		return count;
+	}
 		
 }

@@ -30,7 +30,7 @@ public class HomeActivity extends Activity
 		{
 			public void onClick(View v)
 			{
-				Intent imageBoard = new Intent(getApplicationContext(), ImageBoardActivity.class);
+				Intent imageBoard = new Intent(getApplicationContext(), LevelListActivity.class);
 				startActivity(imageBoard);
 			}
 		});

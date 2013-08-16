@@ -28,6 +28,9 @@
         <activity
             android:name="com.death.artovmetal.GuessImageActivity"
             android:label="Album" />
+        <activity
+            android:name="com.death.artovmetal.LevelListActivity"
+            android:label="Levels" />
     </application>
 
 </manifest>

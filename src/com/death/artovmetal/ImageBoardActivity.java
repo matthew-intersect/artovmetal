@@ -32,7 +32,8 @@ public class ImageBoardActivity extends Activity
 		GridView imageGrid = (GridView) findViewById(R.id.image_grid);
 		
 		images = new ArrayList<Image>();
-		images = imageDatabaseAdapter.getImagesByLevel(1);
+		Bundle extras = getIntent().getExtras();
+		images = imageDatabaseAdapter.getImagesByLevel(extras.getInt("level"));
 		ImageAdapter imageAdapter = new ImageAdapter(this, images);
 		imageGrid.setAdapter(imageAdapter);
 		
@@ -76,7 +77,7 @@ public class ImageBoardActivity extends Activity
 		{
 			public void onClick(View v)
 			{
-				Intent home = new Intent(ImageBoardActivity.this, HomeActivity.class);
+				Intent home = new Intent(ImageBoardActivity.this, LevelListActivity.class);
 				startActivity(home);
 				finish();
 			}
