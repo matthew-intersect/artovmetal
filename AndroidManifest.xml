@@ -25,6 +25,9 @@
         <activity
             android:name="com.death.artovmetal.ImageBoardActivity"
             android:label="Image Board" />
+        <activity
+            android:name="com.death.artovmetal.GuessImageActivity"
+            android:label="Album" />
     </application>
 
 </manifest>

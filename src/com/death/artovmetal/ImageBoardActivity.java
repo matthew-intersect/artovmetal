@@ -10,7 +10,6 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.GridView;
-import android.widget.Toast;
 
 public class ImageBoardActivity extends Activity
 {
@@ -39,7 +38,9 @@ public class ImageBoardActivity extends Activity
 		{
 	        public void onItemClick(AdapterView<?> parent, View v, int position, long id)
 	        {
-	            Toast.makeText(ImageBoardActivity.this, images.get(position).getAlbum(), Toast.LENGTH_SHORT).show();
+	        	Intent album = new Intent(ImageBoardActivity.this, GuessImageActivity.class);
+	            album.putExtra("albumID", images.get(position).getId());
+	            startActivity(album);
 	        }
 	    });
 		

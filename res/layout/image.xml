@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#3b3b3b">
+
+    <ImageView android:id="@+id/albumView"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+		android:scaleType="fitCenter"
+        android:contentDescription="@string/album_desc"
+        android:layout_gravity="center" />
+    
+    <View
+		android:layout_width="1dp"
+		android:layout_height="10dp" />
+    
+    <EditText android:id="@+id/albumAnswer"
+        android:layout_width="match_parent" 
+	    android:layout_height="wrap_content"
+	    android:textColor="#FFFFFF"
+	    android:hint="@string/album_title"
+	    android:layout_gravity="center" />
+    
+	<TextView android:id="@+id/answerError"
+	    android:layout_width="match_parent" 
+	    android:layout_height="wrap_content"
+	    android:textIsSelectable="true"
+	    android:layout_gravity="center" />
+	
+	<View
+		android:layout_width="1dp"
+		android:layout_height="10dp" />
+	
+	<Button android:id="@+id/btnCheck"
+	        android:layout_width="wrap_content" 
+	        android:layout_height="wrap_content"
+	        android:text="@string/check"
+	        android:layout_gravity="center"
+	        android:minWidth="200dp" />
+	<View
+		android:layout_width="1dp"
+		android:layout_height="20dp" />
+	
+	<TextView android:id="@+id/returnToList"
+	    android:layout_width="wrap_content" 
+	    android:layout_height="wrap_content"
+	    android:textIsSelectable="true"
+	    android:textColor="#FFFFFF"
+	    android:text="@string/return_to_album_board"
+	    android:layout_gravity="center" />
+	
+</LinearLayout>

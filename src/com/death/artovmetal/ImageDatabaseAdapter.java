@@ -128,7 +128,22 @@ public class ImageDatabaseAdapter
 			Image image = new Image(id, filename, artist, album, status, level);
 			images.add(image);
 		}
+		imgCursor.close();
 		return images;
+	}
+
+	public Image getImageById(int id)
+	{
+		Cursor imgCursor = db.query("image", null, " id=?", new String[]{String.valueOf(id)}, null, null, null);
+		imgCursor.moveToFirst();
+		int albumId = imgCursor.getInt(imgCursor.getColumnIndex("id"));
+		String filename = imgCursor.getString(imgCursor.getColumnIndex("filename"));
+		String artist = imgCursor.getString(imgCursor.getColumnIndex("artist"));
+		String album = imgCursor.getString(imgCursor.getColumnIndex("album"));
+		int status = imgCursor.getInt(imgCursor.getColumnIndex("status"));
+		int level = imgCursor.getInt(imgCursor.getColumnIndex("level"));
+		imgCursor.close();
+		return new Image(albumId, filename, artist, album, status, level);
 	}
 		
 }
