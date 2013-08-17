@@ -560,4 +560,144 @@
 		<genre>Death Metal</genre>
         <level>4</level>
     </image>
+    <image>
+        <filename>de_profundis</filename>
+        <artist>Vader</artist>
+        <album>De Profundis</album>
+		<genre>Death Metal</genre>
+        <level>5</level>
+    </image>
+    <image>
+        <filename>in_pains</filename>
+        <artist>Cadaver</artist>
+        <album>In Pains</album>
+		<genre>Death Metal</genre>
+        <level>5</level>
+    </image>
+    <image>
+        <filename>gateways_to_annihilation</filename>
+        <artist>Morbid Angel</artist>
+        <album>Gateways To Annihilation</album>
+		<genre>Death Metal</genre>
+        <level>5</level>
+    </image>
+    <image>
+        <filename>the_key</filename>
+        <artist>Nocturnus</artist>
+        <album>The Key</album>
+		<genre>Death Metal</genre>
+        <level>5</level>
+    </image>
+    <image>
+        <filename>observant</filename>
+        <artist>Psycroptic</artist>
+        <album>Observant</album>
+		<genre>Death Metal</genre>
+        <level>5</level>
+    </image>
+    <image>
+        <filename>legion</filename>
+        <artist>Deicide</artist>
+        <album>Legion</album>
+		<genre>Death Metal</genre>
+        <level>5</level>
+    </image>
+    <image>
+        <filename>the_source_of_dominion</filename>
+        <artist>Authorize</artist>
+        <album>The Source Of Dominion</album>
+		<genre>Death Metal</genre>
+        <level>5</level>
+    </image>
+    <image>
+        <filename>chaostream</filename>
+        <artist>Lost Soul</artist>
+        <album>Chaostream</album>
+		<genre>Death Metal</genre>
+        <level>5</level>
+    </image>
+    <image>
+        <filename>never_cross_the_dead</filename>
+        <artist>Hooded Menace</artist>
+        <album>Never Cross The Dead</album>
+		<genre>Death Metal</genre>
+        <level>5</level>
+    </image>
+    <image>
+        <filename>effigy_of_the_forgotten</filename>
+        <artist>Suffocation</artist>
+        <album>Effigy Of The Forgotten</album>
+		<genre>Death Metal</genre>
+        <level>5</level>
+    </image>
+    <image>
+        <filename>deathwomb_catachesis</filename>
+        <artist>Pseudogod</artist>
+        <album>Deathwomb Catachesis</album>
+		<genre>Death Metal</genre>
+        <level>5</level>
+    </image>
+    <image>
+        <filename>pestapokalypse_vi</filename>
+        <artist>Belphegor</artist>
+        <album>Pestapokalypse VI</album>
+		<genre>Death Metal</genre>
+        <level>5</level>
+    </image>
+    <image>
+        <filename>choir_of_horrors</filename>
+        <artist>Messiah</artist>
+        <album>Choir Of Horrors</album>
+		<genre>Death Metal</genre>
+        <level>5</level>
+    </image>
+    <image>
+        <filename>butchered_at_birth</filename>
+        <artist>Cannibal Corpse</artist>
+        <album>Butchered At Birth</album>
+		<genre>Death Metal</genre>
+        <level>5</level>
+    </image>
+    <image>
+        <filename>utopia_banished</filename>
+        <artist>Napalm Death</artist>
+        <album>Utopia Banished</album>
+		<genre>Death Metal</genre>
+        <level>5</level>
+    </image>
+    <image>
+        <filename>almighty_arcanum</filename>
+        <artist>Denouncement Pyre</artist>
+        <album>Almighty Arcanum</album>
+		<genre>Death Metal</genre>
+        <level>5</level>
+    </image>
+    <image>
+        <filename>emerging_from_the_netherworlds</filename>
+        <artist>Thanatos</artist>
+        <album>Emerging From The Netherworlds</album>
+		<genre>Death Metal</genre>
+        <level>5</level>
+    </image>
+    <image>
+        <filename>obscura</filename>
+        <artist>Gorguts</artist>
+        <album>Obscura</album>
+		<genre>Death Metal</genre>
+        <level>5</level>
+    </image>
+    <image>
+        <filename>purple_dreams_and_magic_poems</filename>
+        <artist>Scum</artist>
+        <album>Purple Dreams and Magic Poems</album>
+		<genre>Death Metal</genre>
+        <level>5</level>
+    </image>
+    <image>
+        <filename>shadows_and_dust</filename>
+        <artist>Kataklysm</artist>
+        <album>Shadows And Dust</album>
+		<genre>Death Metal</genre>
+        <level>5</level>
+    </image>
 </images>

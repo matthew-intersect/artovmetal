@@ -20,11 +20,11 @@ import android.database.sqlite.SQLiteDatabase;
 public class ImageDatabaseAdapter 
 {
 	static final String DATABASE_NAME = "artovmetal.db";
-	static final int DATABASE_VERSION = 8;
+	static final int DATABASE_VERSION = 10;
 	
 	static final String IMAGE_TABLE_CREATE = "create table image"+
 	                             "( id integer primary key autoincrement, filename text, artist text," +
-	                             "album text, status integer, level integer); ";
+	                             "album text, last_incorrect text, status integer, level integer); ";
 	public  SQLiteDatabase db;
 	private final Context context;
 	private DatabaseHelper dbHelper;
@@ -99,6 +99,7 @@ public class ImageDatabaseAdapter
 		newValues.put("filename", filename);
 		newValues.put("artist", artist);
 		newValues.put("album", album);
+		newValues.put("last_incorrect", "");
 		newValues.put("status", 0); // default status for image
 		newValues.put("level",level);
 	
@@ -122,10 +123,11 @@ public class ImageDatabaseAdapter
 			String filename = imgCursor.getString(imgCursor.getColumnIndex("filename"));
 			String artist = imgCursor.getString(imgCursor.getColumnIndex("artist"));
 			String album = imgCursor.getString(imgCursor.getColumnIndex("album"));
+			String lastIncorrect = imgCursor.getString(imgCursor.getColumnIndex("last_incorrect"));
 			int status = imgCursor.getInt(imgCursor.getColumnIndex("status"));
 			int level = imgCursor.getInt(imgCursor.getColumnIndex("level"));
 			
-			Image image = new Image(id, filename, artist, album, status, level);
+			Image image = new Image(id, filename, artist, album, lastIncorrect, status, level);
 			images.add(image);
 		}
 		imgCursor.close();
@@ -140,16 +142,25 @@ public class ImageDatabaseAdapter
 		String filename = imgCursor.getString(imgCursor.getColumnIndex("filename"));
 		String artist = imgCursor.getString(imgCursor.getColumnIndex("artist"));
 		String album = imgCursor.getString(imgCursor.getColumnIndex("album"));
+		String lastIncorrect = imgCursor.getString(imgCursor.getColumnIndex("last_incorrect"));
 		int status = imgCursor.getInt(imgCursor.getColumnIndex("status"));
 		int level = imgCursor.getInt(imgCursor.getColumnIndex("level"));
 		imgCursor.close();
-		return new Image(albumId, filename, artist, album, status, level);
+		return new Image(albumId, filename, artist, album, lastIncorrect, status, level);
 	}
 
-	public void setAlbumStatus(Image image, ImageStatus correct)
+	public void setAlbumStatus(Image image, ImageStatus status, String incorrectAnswer)
 	{
 		ContentValues updatedValues = new ContentValues();
-		updatedValues.put("status", correct.getStatusNumber());
+		updatedValues.put("status", status.getStatusNumber());
+		if(status==ImageStatus.CORRECT)
+		{
+			updatedValues.put("last_incorrect", "");
+		}
+		else if(status==ImageStatus.INCORRECT)
+		{
+			updatedValues.put("last_incorrect", incorrectAnswer);
+		}
 		String where="id = ?";
 		
 		db.update("image", updatedValues, where, new String[]{String.valueOf(image.getId())});

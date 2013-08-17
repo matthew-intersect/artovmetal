@@ -4,8 +4,11 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -38,6 +41,11 @@ public class GuessImageActivity extends Activity
 		Bundle extras = getIntent().getExtras();
 	    image = imageDatabaseAdapter.getImageById(extras.getInt("albumID"));
 	    
+	    if(image.getLastIncorrect().length()!=0)
+	    {
+	    	albumAnswer.setText(image.getLastIncorrect());
+	    }
+	    
 	    album.setImageResource(getResources().getIdentifier(image.getFilename(),
         		"drawable", getPackageName()));
 	    
@@ -48,7 +56,7 @@ public class GuessImageActivity extends Activity
 				String answer = albumAnswer.getText().toString().trim();
 				if(answer.equalsIgnoreCase(image.getAlbum()))
 				{
-					imageDatabaseAdapter.setAlbumStatus(image, ImageStatus.CORRECT);
+					imageDatabaseAdapter.setAlbumStatus(image, ImageStatus.CORRECT, null);
 					final Dialog dialog = new Dialog(GuessImageActivity.this);
 					dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
     				dialog.setContentView(R.layout.correct_album);
@@ -73,8 +81,13 @@ public class GuessImageActivity extends Activity
 				}
 				else
 				{
-					imageDatabaseAdapter.setAlbumStatus(image, ImageStatus.INCORRECT);
-					Toast.makeText(GuessImageActivity.this, "Incorrect", Toast.LENGTH_LONG).show();
+					imageDatabaseAdapter.setAlbumStatus(image, ImageStatus.INCORRECT, 
+							albumAnswer.getText().toString().trim());
+					Animation shake = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.shake);
+			        findViewById(R.id.albumAnswer).startAnimation(shake);
+					Toast toast = Toast.makeText(GuessImageActivity.this, "Incorrect", Toast.LENGTH_LONG);
+					toast.setGravity(Gravity.TOP|Gravity.CENTER, 0, 100);
+					toast.show();
 				}
 			}
 		});

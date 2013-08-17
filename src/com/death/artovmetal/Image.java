@@ -6,6 +6,7 @@ public class Image
 	private String filename;
 	private String artist;
 	private String album;
+	private String lastIncorrect;
 	private ImageStatus imageStatus;
 	private int level;
 	
@@ -13,12 +14,14 @@ public class Image
 	{
 	}
 	
-	public Image(int id, String filename, String artist, String album, int status, int level)
+	public Image(int id, String filename, String artist, String album, 
+			String lastIncorrect, int status, int level)
 	{
 		this.id = id;
 		this.filename = filename;
 		this.artist = artist;
 		this.album = album;
+		this.lastIncorrect = lastIncorrect;
 		this.level = level;
 		switch (status)
 		{
@@ -72,6 +75,16 @@ public class Image
 	public void setAlbum(String album)
 	{
 		this.album = album;
+	}
+
+	public String getLastIncorrect()
+	{
+		return lastIncorrect;
+	}
+
+	public void setLastIncorrect(String lastIncorrect)
+	{
+		this.lastIncorrect = lastIncorrect;
 	}
 
 	public ImageStatus getImageStatus()
