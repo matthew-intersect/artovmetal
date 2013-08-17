@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -49,11 +50,11 @@ public class GuessImageActivity extends Activity
 				{
 					imageDatabaseAdapter.setAlbumStatus(image, ImageStatus.CORRECT);
 					final Dialog dialog = new Dialog(GuessImageActivity.this);
+					dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
     				dialog.setContentView(R.layout.correct_album);
     				
-    				dialog.setTitle("Correct");
     				TextView albumSummary = (TextView) dialog.findViewById(R.id.albumSummary);
-    				albumSummary.setText(image.getArtist() + " - " + image.getAlbum());
+    				albumSummary.setText(image.getArtist() + "\n" + image.getAlbum());
     				Button ok = (Button) dialog.findViewById(R.id.correctOk);
     				
     				ok.setOnClickListener(new View.OnClickListener() 

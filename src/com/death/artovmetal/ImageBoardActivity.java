@@ -7,6 +7,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
@@ -51,13 +52,13 @@ public class ImageBoardActivity extends Activity
 	        	else
 	        	{
 	        		final Dialog dialog = new Dialog(ImageBoardActivity.this);
+	        		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
     				dialog.setContentView(R.layout.correct_album);
     				
-    				dialog.setTitle("Answer");
     				TextView correct = (TextView) dialog.findViewById(R.id.correct);
     				correct.setVisibility(View.GONE);
     				TextView albumSummary = (TextView) dialog.findViewById(R.id.albumSummary);
-    				albumSummary.setText(images.get(position).getArtist() + " - " + images.get(position).getAlbum());
+    				albumSummary.setText(images.get(position).getArtist() + "\n" + images.get(position).getAlbum());
     				Button ok = (Button) dialog.findViewById(R.id.correctOk);
     				
     				ok.setOnClickListener(new View.OnClickListener() 

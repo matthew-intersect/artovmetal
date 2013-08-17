@@ -2,22 +2,25 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:minWidth="200dp"
+    android:orientation="vertical"
+    android:background="#3b3b3b" >
     
     <TextView android:id="@+id/correct" 
         android:textIsSelectable="false"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content" 
-	    android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_width="fill_parent" 
+	    android:layout_height="fill_parent"
 	    android:textColor="#0F0"
 	    android:textSize="40sp"
 	    android:text="@string/correct" />
     
     <TextView android:id="@+id/albumSummary"
         android:textIsSelectable="true"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content" 
-	    android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_width="fill_parent" 
+	    android:layout_height="fill_parent"
+	    android:textColor="#FFF"
 	    android:textSize="24sp" />
     
     <Button
