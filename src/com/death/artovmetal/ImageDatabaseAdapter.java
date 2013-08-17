@@ -20,7 +20,7 @@ import android.database.sqlite.SQLiteDatabase;
 public class ImageDatabaseAdapter 
 {
 	static final String DATABASE_NAME = "artovmetal.db";
-	static final int DATABASE_VERSION = 7;
+	static final int DATABASE_VERSION = 8;
 	
 	static final String IMAGE_TABLE_CREATE = "create table image"+
 	                             "( id integer primary key autoincrement, filename text, artist text," +
