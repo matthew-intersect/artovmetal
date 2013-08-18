@@ -6,6 +6,9 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
@@ -83,6 +86,34 @@ public class ImageBoardActivity extends Activity
 				finish();
 			}
 		});
-		
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu)
+	{
+	    MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.score_menu, menu);
+	    return true;
+	}
+	
+	@Override
+	public boolean onPrepareOptionsMenu(Menu menu)
+	{
+	    MenuItem score = menu.findItem(R.id.score);
+	    score.setTitle("Score: " + getLevelScore());
+	    return true;
+	}
+	
+	private String getLevelScore()
+	{
+		int correct = 0;
+		for(Image img : images)
+		{
+			if(img.getImageStatus()==ImageStatus.CORRECT)
+			{
+				correct++;
+			}
+		}
+		return String.valueOf(correct) + "/" +  images.size();
 	}
 }

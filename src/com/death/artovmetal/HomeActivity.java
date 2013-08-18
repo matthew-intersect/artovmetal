@@ -24,7 +24,7 @@ public class HomeActivity extends Activity
 		
 		play = (Button) findViewById(R.id.btnPlay);
 		ImageView logo = (ImageView) findViewById(R.id.logo);
-		logo.setImageResource(R.drawable.aom_logo);
+		logo.setImageResource(R.drawable.dfm);
 		
 		play.setOnClickListener(new View.OnClickListener()
 		{
