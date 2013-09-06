@@ -3,14 +3,19 @@ package com.death.artovmetal;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class HomeActivity extends Activity
 {
 	ImageDatabaseAdapter imageDatabaseAdapter;
 	Button play;
+	TextView score;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -22,8 +27,10 @@ public class HomeActivity extends Activity
 		imageDatabaseAdapter = imageDatabaseAdapter.open();
 		
 		play = (Button) findViewById(R.id.btnPlay);
+		score = (TextView) findViewById(R.id.totalScore);
 		ImageView logo = (ImageView) findViewById(R.id.logo);
 		logo.setImageResource(R.drawable.dfm);
+		score.setText("Score: " + imageDatabaseAdapter.getTotalScore() + "/100");
 		
 		play.setOnClickListener(new View.OnClickListener()
 		{
@@ -33,6 +40,28 @@ public class HomeActivity extends Activity
 				startActivity(imageBoard);
 			}
 		});
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu)
+	{
+	    MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.home_menu, menu);
+	    return true;
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item)
+	{
+		switch(item.getItemId())
+		{
+			case R.id.reset_game:
+			{
+				//TODO: reset game action with confirmation
+				return true;
+			}
+		}
+		return false;
 	}
 
 }

@@ -184,6 +184,21 @@ public class ImageDatabaseAdapter
 		return levels;
 	}
 	
+	public int getTotalScore()
+	{
+		Cursor imgCursor = db.query("image", null, "status=1", null, null, null, null);
+		return imgCursor.getCount();
+	}
+	
+	public void resetGame()
+	{
+		//TODO: clear all answers and statii for images
+		ContentValues updatedValues = new ContentValues();
+		updatedValues.put("status", 0);
+		updatedValues.put("last_incorrect", "");
+		db.update("image", updatedValues, null, null);
+	}
+	
 	private int numberCorrect(ArrayList<Image> images)
 	{
 		int count = 0;

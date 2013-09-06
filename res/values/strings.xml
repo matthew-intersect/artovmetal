@@ -17,5 +17,6 @@
     <string name="logo">logo</string>
     <string name="no_levels">No levels to display</string>
     <string name="score">Score: </string>
+    <string name="reset_game">Reset game</string>
 
 </resources>
