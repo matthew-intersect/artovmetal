@@ -10,7 +10,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 public class HomeActivity extends Activity
@@ -30,8 +29,6 @@ public class HomeActivity extends Activity
 		
 		play = (Button) findViewById(R.id.btnPlay);
 		score = (TextView) findViewById(R.id.totalScore);
-		ImageView logo = (ImageView) findViewById(R.id.logo);
-		logo.setImageResource(R.drawable.dfm);
 		score.setText("Score: " + imageDatabaseAdapter.getTotalScore() + "/100");
 		
 		play.setOnClickListener(new View.OnClickListener()
@@ -60,8 +57,8 @@ public class HomeActivity extends Activity
 			case R.id.reset_game:
 			{
 				AlertDialog.Builder builder = new AlertDialog.Builder(this);
-				builder.setMessage("Are you sure?").setPositiveButton("Yes", dialogClickListener)
-				    .setNegativeButton("No", dialogClickListener).show();
+				builder.setMessage("Are you sure?").setPositiveButton("Yes", dialogClickListener);
+				builder.setNegativeButton("No", dialogClickListener).show();
 				return true;
 			}
 		}
@@ -70,20 +67,19 @@ public class HomeActivity extends Activity
 	
 	DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener()
 	{
-	    @Override
+		@Override
 	    public void onClick(DialogInterface dialog, int which)
 	    {
-	        switch (which)
+	    	switch (which)
 	        {
-		        case DialogInterface.BUTTON_POSITIVE:
-		            imageDatabaseAdapter.resetGame();
-		            finish();
-		            startActivity(getIntent());
-		            break;
-	
-		        case DialogInterface.BUTTON_NEGATIVE:
-		            dialog.dismiss();
-		            break;
+	        	case DialogInterface.BUTTON_POSITIVE:
+	        		imageDatabaseAdapter.resetGame();
+	        		finish();
+	        		startActivity(getIntent());
+	        		break;
+	        	case DialogInterface.BUTTON_NEGATIVE:
+	        		dialog.dismiss();
+	        		break;
 	        }
 	    }
 	};
