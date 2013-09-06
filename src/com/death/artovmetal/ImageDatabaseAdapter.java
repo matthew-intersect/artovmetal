@@ -192,7 +192,6 @@ public class ImageDatabaseAdapter
 	
 	public void resetGame()
 	{
-		//TODO: clear all answers and statii for images
 		ContentValues updatedValues = new ContentValues();
 		updatedValues.put("status", 0);
 		updatedValues.put("last_incorrect", "");

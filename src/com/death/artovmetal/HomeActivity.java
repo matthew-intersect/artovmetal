@@ -2,6 +2,8 @@ package com.death.artovmetal;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -57,11 +59,33 @@ public class HomeActivity extends Activity
 		{
 			case R.id.reset_game:
 			{
-				//TODO: reset game action with confirmation
+				AlertDialog.Builder builder = new AlertDialog.Builder(this);
+				builder.setMessage("Are you sure?").setPositiveButton("Yes", dialogClickListener)
+				    .setNegativeButton("No", dialogClickListener).show();
 				return true;
 			}
 		}
 		return false;
 	}
+	
+	DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener()
+	{
+	    @Override
+	    public void onClick(DialogInterface dialog, int which)
+	    {
+	        switch (which)
+	        {
+		        case DialogInterface.BUTTON_POSITIVE:
+		            imageDatabaseAdapter.resetGame();
+		            finish();
+		            startActivity(getIntent());
+		            break;
+	
+		        case DialogInterface.BUTTON_NEGATIVE:
+		            dialog.dismiss();
+		            break;
+	        }
+	    }
+	};
 
 }
