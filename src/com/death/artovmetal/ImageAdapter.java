@@ -50,17 +50,7 @@ public class ImageAdapter extends BaseAdapter
     	ImageView art = (ImageView) convertView.findViewById(R.id.albumArt);
     	art.setScaleType(ImageView.ScaleType.CENTER_CROP);
     	ImageView status = (ImageView) convertView.findViewById(R.id.albumStatus);
-    	art.setImageResource(context.getResources().getIdentifier(images.get(position).getFilename(),
-        		"drawable", context.getPackageName()));
-    	
-    	if(images.get(position).getImageStatus()==ImageStatus.CORRECT)
-    	{
-    		status.setImageResource(R.drawable.correct);
-    	}
-    	else if(images.get(position).getImageStatus()==ImageStatus.INCORRECT)
-    	{
-    		status.setImageResource(R.drawable.incorrect);
-    	}
+    	new ImageLoaderTask(art, status, context, images.get(position).getFilename(), images.get(position).getImageStatus()).execute();
     	
     	return convertView;
     }
