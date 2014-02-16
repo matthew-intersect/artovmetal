@@ -73,6 +73,14 @@ public class LevelListActivity extends ListActivity
 	    return true;
 	}
 	
+	@Override
+	public void onBackPressed()
+	{
+		Intent levelList = new Intent(this, HomeActivity.class);
+		startActivity(levelList);
+		finish();
+	}
+	
 	private String getTotalScore()
 	{
 		int correct = 0;

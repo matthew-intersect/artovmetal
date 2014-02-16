@@ -2,6 +2,7 @@ package com.death.artovmetal;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -61,6 +62,18 @@ public class GuessImageActivity extends Activity
 					dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
     				dialog.setContentView(R.layout.correct_album);
     				
+    				dialog.setOnCancelListener(new DialogInterface.OnCancelListener()
+    				{
+    					@Override
+    				    public void onCancel(DialogInterface dialog)
+    				    {
+							Intent levelList = new Intent(getApplicationContext(), ImageBoardActivity.class);
+							levelList.putExtra("level", image.getLevel());
+							GuessImageActivity.this.finish();
+							startActivity(levelList);
+    				    }
+    				});
+    				
     				TextView albumSummary = (TextView) dialog.findViewById(R.id.albumSummary);
     				albumSummary.setText(image.getArtist() + "\n" + image.getAlbum());
     				Button ok = (Button) dialog.findViewById(R.id.correctOk);
@@ -103,4 +116,12 @@ public class GuessImageActivity extends Activity
 		});
 	}
 	
+	@Override
+	public void onBackPressed()
+	{
+		Intent levelList = new Intent(this, ImageBoardActivity.class);
+		levelList.putExtra("level", image.getLevel());
+		startActivity(levelList);
+		finish();
+	}
 }

@@ -89,6 +89,14 @@ public class ImageBoardActivity extends Activity
 	}
 	
 	@Override
+	public void onBackPressed()
+	{
+		Intent levelList = new Intent(this, LevelListActivity.class);
+		startActivity(levelList);
+		finish();
+	}
+	
+	@Override
 	public boolean onCreateOptionsMenu(Menu menu)
 	{
 	    MenuInflater inflater = getMenuInflater();
