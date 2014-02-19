@@ -74,8 +74,8 @@ public class HomeActivity extends Activity
 	        {
 	        	case DialogInterface.BUTTON_POSITIVE:
 	        		imageDatabaseAdapter.resetGame();
-	        		finish();
 	        		startActivity(getIntent());
+	        		finish();
 	        		break;
 	        	case DialogInterface.BUTTON_NEGATIVE:
 	        		dialog.dismiss();
@@ -84,4 +84,12 @@ public class HomeActivity extends Activity
 	    }
 	};
 
+	@Override
+	public void onBackPressed()
+	{
+		Intent intent = new Intent(Intent.ACTION_MAIN);
+		intent.addCategory(Intent.CATEGORY_HOME);
+		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		startActivity(intent);
+	}
 }

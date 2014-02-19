@@ -1,11 +1,13 @@
 package com.death.artovmetal;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.animation.Animation;
@@ -23,18 +25,18 @@ public class GuessImageActivity extends Activity
 	ImageView album;
 	Button check;
 	EditText albumAnswer;
-	TextView back;
 	
+	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.image);
+		getActionBar().setDisplayHomeAsUpEnabled(true);
 		
 		album = (ImageView) findViewById(R.id.albumView);
 		check = (Button) findViewById(R.id.btnCheck);
 		albumAnswer = (EditText) findViewById(R.id.albumAnswer);
-		back = (TextView) findViewById(R.id.returnToList);
 		
 		imageDatabaseAdapter = new ImageDatabaseAdapter(this);
 		imageDatabaseAdapter = imageDatabaseAdapter.open();
@@ -67,10 +69,11 @@ public class GuessImageActivity extends Activity
     					@Override
     				    public void onCancel(DialogInterface dialog)
     				    {
-							Intent levelList = new Intent(getApplicationContext(), ImageBoardActivity.class);
-							levelList.putExtra("level", image.getLevel());
+							Intent imageBoard = new Intent(getApplicationContext(), ImageBoardActivity.class);
+							imageBoard.putExtra("level", image.getLevel());
 							GuessImageActivity.this.finish();
-							startActivity(levelList);
+							startActivity(imageBoard);
+							finish();
     				    }
     				});
     				
@@ -104,24 +107,24 @@ public class GuessImageActivity extends Activity
 				}
 			}
 		});
-	    
-	    back.setOnClickListener(new View.OnClickListener()
-		{
-			public void onClick(View v)
-			{
-				Intent albumBoard = new Intent(GuessImageActivity.this, ImageBoardActivity.class);
-				albumBoard.putExtra("level", image.getLevel());
-				startActivity(albumBoard);
-			}
-		});
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected (MenuItem item)
+	{
+		Intent imageBoard = new Intent(GuessImageActivity.this, ImageBoardActivity.class);
+		imageBoard.putExtra("level", image.getLevel());
+		startActivity(imageBoard);
+		finish();
+		return true;
 	}
 	
 	@Override
 	public void onBackPressed()
 	{
-		Intent levelList = new Intent(this, ImageBoardActivity.class);
-		levelList.putExtra("level", image.getLevel());
-		startActivity(levelList);
+		Intent imageBoard = new Intent(this, ImageBoardActivity.class);
+		imageBoard.putExtra("level", image.getLevel());
+		startActivity(imageBoard);
 		finish();
 	}
 }

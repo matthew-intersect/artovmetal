@@ -24,12 +24,15 @@
         </activity>
         <activity
             android:name="com.death.artovmetal.ImageBoardActivity"
+            android:parentActivityName="com.death.artovmetal.LevelListActivity"
             android:label="Album Board" />
         <activity
             android:name="com.death.artovmetal.GuessImageActivity"
+            android:parentActivityName="com.death.artovmetal.ImageBoardActivity"
             android:label="Album" />
         <activity
             android:name="com.death.artovmetal.LevelListActivity"
+            android:parentActivityName="com.death.artovmetal.HomeActivity"
             android:label="Levels" />
     </application>
 

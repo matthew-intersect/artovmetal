@@ -12,7 +12,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ListView;
 
 @SuppressLint("HandlerLeak")
@@ -22,28 +21,16 @@ public class LevelListActivity extends ListActivity
 	ImageDatabaseAdapter imageDatabaseAdapter;
 	private Runnable viewParts;
 	private LevelAdapter levelAdapter;
-	Button back;
 	
+	@SuppressLint("NewApi")
 	public void onCreate(Bundle savedInstanceState) 
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.level_list);
+		getActionBar().setDisplayHomeAsUpEnabled(true);
 		
 		imageDatabaseAdapter = new ImageDatabaseAdapter(this);
 		imageDatabaseAdapter = imageDatabaseAdapter.open();
-		
-		back = (Button) findViewById(R.id.back_to_menu);
-		
-		
-		back.setOnClickListener(new View.OnClickListener()
-		{
-			public void onClick(View view) 
-			{
-				Intent home = new Intent(LevelListActivity.this, HomeActivity.class);
-				startActivity(home);
-				finish();
-			}
-		});
 		
 		viewParts = new Runnable()
 		{
@@ -76,8 +63,8 @@ public class LevelListActivity extends ListActivity
 	@Override
 	public void onBackPressed()
 	{
-		Intent levelList = new Intent(this, HomeActivity.class);
-		startActivity(levelList);
+		Intent home = new Intent(this, HomeActivity.class);
+		startActivity(home);
 		finish();
 	}
 	

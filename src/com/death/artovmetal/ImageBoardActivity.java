@@ -2,6 +2,7 @@ package com.death.artovmetal;
 
 import java.util.ArrayList;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
@@ -20,19 +21,19 @@ import android.widget.TextView;
 public class ImageBoardActivity extends Activity
 {
 	ImageDatabaseAdapter imageDatabaseAdapter;
-	Button back;
 	ArrayList<Image> images;
 
+	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.image_board);
+		getActionBar().setDisplayHomeAsUpEnabled(true);
 		
 		imageDatabaseAdapter = new ImageDatabaseAdapter(this);
 		imageDatabaseAdapter = imageDatabaseAdapter.open();
 		
-		back = (Button) findViewById(R.id.btnBackToMenu);
 		GridView imageGrid = (GridView) findViewById(R.id.image_grid);
 		
 		images = new ArrayList<Image>();
@@ -51,6 +52,7 @@ public class ImageBoardActivity extends Activity
 		        	Intent album = new Intent(ImageBoardActivity.this, GuessImageActivity.class);
 		            album.putExtra("albumID", images.get(position).getId());
 		            startActivity(album);
+		            finish();
 	        	}
 	        	else
 	        	{
@@ -76,16 +78,6 @@ public class ImageBoardActivity extends Activity
 	        	}
 	        }
 	    });
-		
-		back.setOnClickListener(new View.OnClickListener()
-		{
-			public void onClick(View v)
-			{
-				Intent home = new Intent(ImageBoardActivity.this, LevelListActivity.class);
-				startActivity(home);
-				finish();
-			}
-		});
 	}
 	
 	@Override
