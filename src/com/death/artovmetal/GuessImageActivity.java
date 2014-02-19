@@ -7,11 +7,13 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -51,6 +53,20 @@ public class GuessImageActivity extends Activity
 	    
 	    album.setImageResource(getResources().getIdentifier(image.getFilename(),
         		"drawable", getPackageName()));
+	    
+	    albumAnswer.setOnEditorActionListener(new TextView.OnEditorActionListener()
+		{
+			@Override
+			public boolean onEditorAction(TextView v, int actionId, KeyEvent event)
+			{
+				if(actionId == EditorInfo.IME_ACTION_GO)
+				{
+					check.performClick();
+					return true;
+				}
+				return false;
+			}
+		});
 	    
 	    check.setOnClickListener(new View.OnClickListener()
 		{
